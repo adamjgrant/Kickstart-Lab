@@ -1,6 +1,18 @@
-@import themes/default/theme
+@import themes/materialui/theme
 
 // Write your styles here.
 
 .clip
   +clip
+
+main.main, footer.main
+  +wrapper
+
+main.main
+  padding-top: $space
+
+.meh, .go
+  +button
+
+.go
+  +button-color($primary-color)
