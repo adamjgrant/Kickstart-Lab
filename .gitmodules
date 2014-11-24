@@ -4,3 +4,9 @@
 [submodule "lib-docs/sass/vendor/switch"]
 	path = lib-docs/sass/vendor/switch
 	url = git://github.com/ajkochanowicz/switch.git
+[submodule "lib/sass/themes/materialui"]
+	path = lib/sass/themes/materialui
+	url = git@github.com:ajkochanowicz/materialui.git
+[submodule "lib/sass/vendor/sliding-sidebar"]
+	path = lib/sass/vendor/sliding-sidebar
+	url = git@github.com:ajkochanowicz/sliding-sidebar.git
