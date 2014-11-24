@@ -10,3 +10,9 @@
 [submodule "lib/sass/vendor/sliding-sidebar"]
 	path = lib/sass/vendor/sliding-sidebar
 	url = git@github.com:ajkochanowicz/sliding-sidebar.git
+[submodule "lib/sass/themes/readable"]
+	path = lib/sass/themes/readable
+	url = git@github.com:ajkochanowicz/readable.git
+[submodule "lib/sass/themes/economist"]
+	path = lib/sass/themes/economist
+	url = git@github.com:ajkochanowicz/economist.git
