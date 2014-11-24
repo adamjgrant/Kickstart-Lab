@@ -42,6 +42,8 @@ block documents
       :markdown
         ## Create a project to contain your extensions
 
+        <iframe width="420" height="315" src="//www.youtube.com/embed/Ork8Zk4IoF8?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
         For your first extension, you're going to create two repositories. The
           first will be a project to contain all the extensions you build from now on.
           this is what we'll mean when we say "project" from here on.
@@ -56,7 +58,7 @@ block documents
         <span>
 
             # Create a "My Extensions" directory and cd into it.
-            $(~) git clone git@github.com:ajkochanowicz/kickstart.git myextensions --depth 1 && cd myextensions
+            $(~) git clone git@github.com:ajkochanowicz/kickstart.git myextensions && cd myextensions
 
   .document
     article.article
@@ -67,13 +69,13 @@ block documents
       :markdown
         <span>
 
-            $(myextensions) sudo npm install -g gulp && npm install . && bundle
+            $(myextensions) sudo npm install -g gulp && sudo npm install . && bundle && make
 
   .document
     article.article
       :markdown
-        If everything worked correctly, you should be able to run the `gulp` command. This
-          will automatically launch a browser with a basic sample webpage.
+        If everything worked correctly, you should be able to launch the project with the  `gulp` 
+          command. This will automatically launch a browser with a basic sample webpage.
 
         If you'd like to save your project environment on github, you can remove the existing
           `origin` remote from `.git/config` and add your own (Using the instructions provided 
@@ -110,9 +112,29 @@ block documents
             drwxr-xr-x  switch
 
   .document
-    article.article
+    article.article.article-full
       :markdown
         Let's create an extension with the name "status-text"
+
+        Because submodules are inherently remote repositories, we need to actually create
+        repository in GitHub first.
+
+        Create a new repo in GitHub and initiate with a README.md file. In this example,
+        we'll say we created a repo called "status-text"
+
+        <span class="notice-error">Beware of extensionless files</span> Please
+        avoid using files that do not have extensions. For example, `LICENSE`
+        should be renamed to `LICENSE.md`. Extensionless files create issues 
+        in your Rails end users
+
+  .document
+    article.article
+      :markdown
+        Now that you have your `status-text` repo, you'll need to add it as a submodule
+        in your project.
+
+        <span class="notice-warning">Don't clone!</span> It's tempting to just `git clone` your repo, here,
+        but you won't be able to maintain it as easily from within your project.
 
         You should then see this directory created alongside the `switch` extension.
 
@@ -120,10 +142,10 @@ block documents
       :markdown
         <span>
 
-            $(vendor) git init status-text
+            $(vendor) git submodule add git@github.com:mygithubaccount/status-text.git
 
             $(vendor) ls
-            _index.sass switch status-text
+            switch status-text _index.sass
 
   .document
     article.article
@@ -239,26 +261,25 @@ block documents
         For **themes**, look in `lib/sass/themes/`. There you'll see a directory called "default"
           and a sass file called theme.sass.
 
-        If you look at theme.sass, you'll notice the content is unremarkable. To reduce
-          code duplication, we've just routed it to the default theme from kickstart-core.
+        We'll need to create a structure similar to `default`. First, we'll need to create
+        an empty repository on GitHub so we can create a submodule from it.
 
-        To create your theme, you'll want to have a directory with your theme's name
-        next to the "default" directory. In that directory you'll also want a `theme.sass`
-        file.
+        Create a repository with the name of your theme, including a README.md file, and add 
+        it as a submodule to your lib/sass/themes directory.
 
-        But to do this, we should really start out with the default theme and evolve it into
-        something new. Let's copy the default theme from the core and add it to your theme
-        directory in lib.
+        Then copy in the default theme from the core directory. This will be the sass file
+        that will become your theme.
 
     article.code
       :markdown
         <span>
 
-            # In this example, our theme will be called "Dark"
-            $(myextensions) mkdir lib/sass/themes/dark
+            # Add the repo as a submodule.
+            $(themes) git submodule add git@github.com:mygithubaccount/mytheme.git
 
             # Copy the core theme into "dark"
-            $(myextensions) cp lib-core/sass/themes/default/theme.sass lib/sass/themes/dark/
+            $(themes) cd ../../../
+            $(myextensions) cp lib-core/sass/themes/default/theme.sass lib/sass/themes/mytheme/
 
   .document
     article.article
@@ -286,33 +307,25 @@ block documents
   .document
     article.article
       :markdown
-        ## Save extension on GitHub
+        #### Test your theme with the docs
 
-        Now let's save this extension as its own standalone GitHub repo.
-        This will allow users to install it as a submodule without getting
-        any of the code above the directory where your extension lives.
+        Better, just use the docs! This will allow you to test your theme with all
+        the core components.
 
-        A great way to do this is to simply create a new repo on GitHub 
-        without a license or readme, and follow the "Push an existing repository"
-        instructions.
+        Instead of `gulp`, run `gulp watch:docs`. This will compile all the files
+        in `lib-docs` instead of `lib`.
 
-        <span class="notice">Beware of extensionless files</span> Please
-        avoid using files that do not have extensions. For example, `LICENSE`
-        should be renamed to `LICENSE.md`
+        Because there are several places you'd need to change the theme (The docs use
+        a long list of css files.) the chosen theme can be changed in all files from
+        `lib-docs/sass/chosen-theme.sass`.
 
-        Extensionless files create issues in your Rails end users
+        If you want to run both the `lib` and `lib-docs` directories, no problem.
+          Gulp will automatically use different ports for each.
 
     article.code
       :markdown
         <span>
 
-            $(status-text) git init
-            $(status-text) git add -A .
-            $(status-text) git commit -am "Starting my new extension"
-            # Now you can push this up to Github.
-
-            $(dark) git init
-            $(dark) git add -A .
-            $(dark) git commit -am "Starting new theme"
-            # Now you can push this up to Github.
-
+            // In lib-docs/sass/chosen-themes.sass
+            // We need to reach up a couple directories to get to our theme in lib.
+            @import ../../lib/sass/themes/mytheme/theme.sass
