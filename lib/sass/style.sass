@@ -11,8 +11,23 @@ main.main, footer.main
 main.main
   padding-top: $space
 
-.meh, .go
+.meh, .go, .yellow, .orange, .green, .violet, .red
   +button
 
 .go
   +button-color($primary-color)
+
+.red
+  +button-color(map-get($colors, red))
+
+.yellow
+  +button-color(map-get($colors, yellow))
+
+.orange
+  +button-color(map-get($colors, orange))
+
+.green
+  +button-color(map-get($colors, green))
+
+.violet
+  +button-color(map-get($colors, violet))
