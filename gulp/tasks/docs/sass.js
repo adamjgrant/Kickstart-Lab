@@ -8,7 +8,7 @@ var gulp       = require('gulp'),
 gulp.task('docs:sass', ['docs:images'], function() {
   var dest = './docs/css'
   return gulp.src(['lib-docs/sass/**/*.{sass, scss}', '!lib-docs/sass/vendor', '!lib-docs/sass/vendor/**'])
-    .pipe(changed(dest))
+    // .pipe(changed(dest))
     .pipe(sass({
       sourcemapPath: process.cwd() + './lib-docs/sass',
       loadPath: [
