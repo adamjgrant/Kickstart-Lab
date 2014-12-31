@@ -1,18 +1,18 @@
 [submodule "lib/sass/vendor/switch"]
-	path = lib/sass/vendor/switch
-	url = git://github.com/ajkochanowicz/switch.git
+  path = lib/sass/vendor/switch
+  url = git://github.com/ajkochanowicz/switch.git
 [submodule "lib-docs/sass/vendor/switch"]
-	path = lib-docs/sass/vendor/switch
-	url = git://github.com/ajkochanowicz/switch.git
+  path = lib-docs/sass/vendor/switch
+  url = git://github.com/ajkochanowicz/switch.git
 [submodule "lib/sass/themes/materialui"]
-	path = lib/sass/themes/materialui
-	url = git@github.com:ajkochanowicz/materialui.git
+  path = lib/sass/themes/materialui
+  url = git@github.com:ajkochanowicz/materialui.git
 [submodule "lib/sass/vendor/sliding-sidebar"]
-	path = lib/sass/vendor/sliding-sidebar
-	url = git@github.com:ajkochanowicz/sliding-sidebar.git
+  path = lib/sass/vendor/sliding-sidebar
+  url = git@github.com:ajkochanowicz/sliding-sidebar.git
 [submodule "lib/sass/themes/readable"]
-	path = lib/sass/themes/readable
-	url = git@github.com:ajkochanowicz/readable.git
+  path = lib/sass/themes/readable
+  url = git@github.com:ajkochanowicz/readable.git
 [submodule "lib/sass/themes/economist"]
-	path = lib/sass/themes/economist
-	url = git@github.com:ajkochanowicz/economist.git
+  path = lib/sass/themes/economist
+  url = git@github.com:ajkochanowicz/economist.git
