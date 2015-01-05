@@ -16,3 +16,6 @@
 [submodule "lib/sass/themes/economist"]
   path = lib/sass/themes/economist
   url = git@github.com:ajkochanowicz/economist.git
+[submodule "lib/sass/themes/kickstart-default-theme"]
+	path = lib/sass/themes/kickstart-default-theme
+	url = git@github.com:ajkochanowicz/kickstart-default-theme.git
