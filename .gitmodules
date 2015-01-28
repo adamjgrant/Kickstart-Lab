@@ -28,3 +28,6 @@
 [submodule "lib/sass/themes/Kickstart-Central-Park-No-GWT"]
 	path = lib/sass/themes/Kickstart-Central-Park-No-GWT
 	url = git@github.com:ajkochanowicz/Kickstart-Central-Park-No-GWT.git
+[submodule "lib/coffee/vendor/Kickstart-Tour"]
+	path = lib/coffee/vendor/Kickstart-Tour
+	url = git@github.com:ajkochanowicz/Kickstart-Tour.git

@@ -11,6 +11,7 @@ block subMenuVars
   - var subMenuItem = "getstarted"
 
 block documents 
+  include _includes/quickstart/_quickstart_header.jade
   .document
     article.article
       h1 Barebones
@@ -92,6 +93,8 @@ block documents
         <span>
 
             $(~) git clone git@github.com:ajkochanowicz/kickstart.git --depth 1
+            # Omit the depth option if you intend to keep up to date with the
+            # Kickstart repo. Otherwise, this makes the cloning a lot faster.
 
   .document
     article.article.article-full
@@ -237,13 +240,17 @@ block documents
         <span>
 
             $(~) git clone git@github.com:ajkochanowicz/kickstart.git mywebsite --depth 1
+            # Omit the depth option if you intend to keep up to date with the
+            # Kickstart repo. Otherwise, this makes the cloning a lot faster.
 
             # Install the dependencies
             $(~) cd mywebsite
-            $(mywebsite) sudo npm install -g gulp && npm install . && bundle
+            $(mywebsite) make setup
 
             # If all goes well, this should launch your project.
             $(mywebsite) gulp
+
+  include _includes/quickstart/_jekyll.jade
 
   .document
     article.article

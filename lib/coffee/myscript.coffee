@@ -1,4 +1,5 @@
 myscript = () ->
+  # Write your coffeescript here.
 
   k$.$('#open-sidebar').addEventListener 'click', ->
     k$.$('.clip section').classList.add 'open'
