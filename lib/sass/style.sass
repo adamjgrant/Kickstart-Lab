@@ -1,4 +1,4 @@
-@import themes/economist/theme
+@import themes/readable/theme
 
 // Write your styles here.
 
@@ -35,5 +35,11 @@ main.main
 .menu
   +navbar
 
-.myhoverbox
-  +hover-box
+progress
+  +progress
+
+progress.red
+  +progress($color: map-get($colors, red))
+
+progress.yellow
+  +progress($color: map-get($colors, yellow))

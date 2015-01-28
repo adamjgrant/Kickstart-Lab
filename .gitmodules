@@ -19,3 +19,12 @@
 [submodule "lib/sass/themes/kickstart-default-theme"]
 	path = lib/sass/themes/kickstart-default-theme
 	url = git@github.com:ajkochanowicz/kickstart-default-theme.git
+[submodule "lib/sass/vendor/Kickstart-Browser-Warning"]
+	path = lib/sass/vendor/Kickstart-Browser-Warning
+	url = git@github.com:ajkochanowicz/Kickstart-Browser-Warning.git
+[submodule "lib/sass/vendor/Kickstart-Progress-Bars"]
+	path = lib/sass/vendor/Kickstart-Progress-Bars
+	url = git@github.com:ajkochanowicz/Kickstart-Progress-Bars.git
+[submodule "lib/sass/themes/Kickstart-Central-Park-No-GWT"]
+	path = lib/sass/themes/Kickstart-Central-Park-No-GWT
+	url = git@github.com:ajkochanowicz/Kickstart-Central-Park-No-GWT.git
