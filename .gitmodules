@@ -31,3 +31,6 @@
 [submodule "lib/coffee/vendor/Kickstart-Tour"]
 	path = lib/coffee/vendor/Kickstart-Tour
 	url = git@github.com:ajkochanowicz/Kickstart-Tour.git
+[submodule "lib/sass/vendor/Kickstart-Tour-Sass"]
+	path = lib/sass/vendor/Kickstart-Tour-Sass
+	url = git@github.com:ajkochanowicz/Kickstart-Tour-Sass.git
